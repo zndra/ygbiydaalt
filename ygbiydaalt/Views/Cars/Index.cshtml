@@ -1,0 +1,85 @@
+﻿@model IEnumerable<ygbiydaalt.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.carName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.range)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.topspeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.asctime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarModels.modelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.excolor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.incolor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.carName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.range)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.topspeed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.asctime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModels.modelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    <img src="@item.imagepath" alt="@item.carName" style="max-width: 100px; max-height: 100px;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.excolor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.incolor)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.carID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.carID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.carID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

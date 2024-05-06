@@ -1,0 +1,73 @@
+﻿@model ygbiydaalt.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.carName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.carName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.range)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.range)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.topspeed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.topspeed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.asctime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.asctime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CarModels)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CarModels.modelID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.imagepath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.imagepath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.excolor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.excolor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.incolor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.incolor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.carID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
